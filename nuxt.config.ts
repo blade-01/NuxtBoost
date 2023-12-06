@@ -2,20 +2,18 @@
 export default defineNuxtConfig({
   app: {
     head: {
+      titleTemplate: "%s | NuxtBoost",
       title: "NuxtBoost",
-      meta: [{ name: "description", content: "Everything about NuxtBoost" }],
-      link: [
-        { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      meta: [
+        { charset: "utf-8" },
         {
-          rel: "preconnect",
-          href: "https://fonts.gstatic.com",
-          crossorigin: ""
+          name: "description",
+          content:
+            "Boost your productivity with NuxtBoost - work smarter, not harder."
         },
-        {
-          rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
-        }
-      ]
+        { name: "theme-color", content: "#1e1e2e" }
+      ],
+      link: [{ rel: "icon", href: "/favicon.ico" }]
     }
   },
   devtools: { enabled: true },
@@ -33,7 +31,7 @@ export default defineNuxtConfig({
     transpile: ["primevue", "@vuepic/vue-datepicker"]
   },
   imports: {
-    dirs: ["stores"]
+    dirs: ["store"]
   },
   /**
    * Environment variables
@@ -58,38 +56,20 @@ export default defineNuxtConfig({
     "@vee-validate/nuxt",
     "dayjs-nuxt",
     "vue3-carousel-nuxt",
-    "@nuxt/devtools"
+    "@nuxt/devtools",
+    "@nuxtjs/color-mode"
   ],
   /**
    * Pinia configuration
    */
   pinia: {
-    storesDirs: ["./stores/**"]
+    storesDirs: ["./store/**"]
     // autoImports: ["defineStore", "acceptHMRUpdate"]
   },
   /**
    * Internalization configuration
    */
   i18n: {
-    detectBrowserLanguage: false,
-    lazy: true,
-    langDir: "locales",
-    strategy: "prefix_except_default",
-    locales: [
-      {
-        code: "en-US",
-        iso: "en-US",
-        name: "English (US)",
-        file: "en-US.json"
-      },
-      {
-        code: "es-ES",
-        iso: "es-ES",
-        name: "Español (ES)",
-        file: "es-ES.json"
-      }
-    ],
-    defaultLocale: "en",
     vueI18n: "./i18n.config.ts"
   },
   /**
@@ -112,5 +92,21 @@ export default defineNuxtConfig({
     plugins: ["relativeTime", "utc", "timezone"],
     defaultLocale: "en",
     defaultTimezone: "America/New_York"
+  },
+  /**
+   * Nuxt Color Mode Configuration
+   */
+  colorMode: {
+    classSuffix: "",
+    preference: "system",
+    fallback: "light"
+  },
+  /**
+   * External Image Provider Configuration
+   */
+  image: {
+    cloudinary: {
+      baseURL: "https://res.cloudinary.com/bladencove/image/upload/RC"
+    }
   }
 });
