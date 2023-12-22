@@ -177,6 +177,39 @@
   .xxl {
     @apply w-12 h-12;
   }
+
+  /* BADGE */
+  .badge {
+    @apply text-xs font-medium px-2 py-1 rounded-full;
+  }
+
+  .badge-default {
+    @apply bg-gray-200 text-gray-700;
+  }
+
+  .badge-primary {
+    @apply bg-primary-main text-white;
+  }
+
+  .badge-success {
+    @apply bg-green-500 text-white;
+  }
+
+  .badge-danger {
+    @apply bg-red-500 text-white;
+  }
+
+  .badge-warning {
+    @apply bg-yellow-500 text-white;
+  }
+
+  .badge-info {
+    @apply bg-blue-500 text-white;
+  }
+
+  .badge-white {
+    @apply bg-white text-gray-700 border;
+  }
 }
 
 @layer utilities {
