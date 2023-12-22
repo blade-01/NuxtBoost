@@ -24,6 +24,11 @@ export default () => {
       route: "/dashboard/input"
     },
     {
+      name: "Modal Samples",
+      icon: "help-box-multiple-outline",
+      route: "/dashboard/modal"
+    },
+    {
       name: "User",
       icon: "account",
       show: false,
