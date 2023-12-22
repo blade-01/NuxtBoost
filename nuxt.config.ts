@@ -28,7 +28,7 @@ export default defineNuxtConfig({
     "~/plugins/primevue.ts"
   ],
   build: {
-    transpile: ["primevue", "@vuepic/vue-datepicker"]
+    transpile: ["primevue"]
   },
   imports: {
     dirs: ["store"]
