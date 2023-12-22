@@ -62,6 +62,7 @@ const chips = ref<any>(["hi"]);
 
 <template>
   <div>
+    <p class="title mb-5 text-4xl">Form Input Samples</p>
     <div>
       <!-- Form -->
       <Form v-slot="{ errors, values }" :validation-schema="mainSchema">
@@ -348,11 +349,11 @@ const chips = ref<any>(["hi"]);
           <div class="flex justify-end gap-2.5">
             <UiBtn
               label="Cancel"
-              size="xs"
+              size="sm"
               type="button"
               outer-class="!bg-transparent border border-gray-500"
             />
-            <UiBtn label="Submit" size="xs" />
+            <UiBtn label="Submit" size="sm" />
           </div>
           <!-- ./ Action Buttons -->
         </div>
