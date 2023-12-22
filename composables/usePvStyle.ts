@@ -138,13 +138,35 @@ export default () => {
     };
   });
 
-  const fileStyle = computed(() => {
+  const dialogStyle = computed(() => {
     return {
-      input: { class: "input-style ring-0" },
-      panel: { class: "bg-white dark:bg-darkBgSec dropdown-text p-3" },
-      header: { class: "bg-white dark:bg-darkBgSec dropdown-text py-3.5" }
+      root: {
+        class: "bg-white dark:bg-darkBgSec dialog rounded-lg shadow-xl border"
+      },
+      header: {
+        class: "p-4 flex justify-between items-center border-b"
+      },
+      headerTitle: {
+        class: "font-semibold"
+      },
+      content: {
+        class: "p-2 max-h-[80vh] overflow-y-auto"
+      },
+      footer: {
+        class: "p-2 border-t flex justify-end items-center"
+      }
     };
   });
+
+  const tooltipStyle = computed(() => {
+    return {
+      root: {
+        class: "bg-white dark:bg-darkBgSec dialog rounded-lg shadow-xl border"
+      },
+      text: "text-white !text-xs !p-1.5"
+    };
+  });
+
   return {
     dropdownStyle,
     multiSelectStyle,
@@ -152,6 +174,7 @@ export default () => {
     autocompleteStyle,
     chipStyle,
     editorStyle,
-    fileStyle
+    dialogStyle,
+    tooltipStyle
   };
 };
