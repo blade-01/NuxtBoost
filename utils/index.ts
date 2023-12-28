@@ -6,23 +6,30 @@ import relativetime from "dayjs/plugin/relativeTime";
  * @param status
  * @returns string
  */
-export function getStatusColor(status: string): string {
-  switch (status) {
-    case "failed" || "error" || "rejected" || "inactive" || "deactivated":
-      return "badge-danger";
-    case "successful" ||
-      "success" ||
-      "completed" ||
-      "complete" ||
-      "paid" ||
-      "approved" ||
-      "active" ||
-      "activated":
-      return "badge-success";
-    case "neutral":
-      return "badge-info";
-    default:
-      return "badge-default";
+export function getStatusBadge(status: string): string {
+  if (
+    status === "failed" ||
+    status === "error" ||
+    status === "rejected" ||
+    status === "inactive" ||
+    status === "deactivated"
+  ) {
+    return "badge-danger";
+  } else if (
+    status === "successful" ||
+    status === "success" ||
+    status === "completed" ||
+    status === "complete" ||
+    status === "paid" ||
+    status === "approved" ||
+    status === "active" ||
+    status === "activated"
+  ) {
+    return "badge-success";
+  } else if (status === "neutral") {
+    return "badge-info";
+  } else {
+    return "badge-default";
   }
 }
 
