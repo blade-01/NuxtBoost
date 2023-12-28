@@ -1,10 +1,10 @@
 <script setup lang="ts">
 interface Props {
   modelValue: boolean;
-  position: string;
-  size: string;
-  persistent: boolean;
-  title: string;
+  position?: string;
+  size?: string;
+  persistent?: boolean;
+  title?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
