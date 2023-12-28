@@ -6,7 +6,7 @@ const { setTheme } = useTheme();
 
 <template>
   <div
-    class="flex items-center main sticky top-0 w-full h-[60px] z-50 shadow-sm bg-white dark:bg-darkBgSec"
+    class="flex items-center main sticky top-0 w-full h-[60px] z-30 shadow-sm bg-white dark:bg-darkBgSec"
   >
     <div class="p-4 w-full">
       <div class="flex justify-between items-center w-full">
