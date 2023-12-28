@@ -48,7 +48,7 @@ const { tooltipStyle } = usePvStyle();
         size="sm"
         @click="persistentModal = !persistentModal"
         v-tooltip.bottom="{
-          value: 'Modal not close without clicking close button',
+          value: 'Modal will not close without clicking close button',
           pt: tooltipStyle,
         }"
       />
