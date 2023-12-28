@@ -23,7 +23,7 @@ useHead({
       type="text"
       name="name"
       :placeholder="$t('placeholder')"
-      class="text-center"
+      class="text-center mt-5"
     />
     <UiBtn :label="$t('go')" class="px-6 h-[35px]" />
   </Form>
