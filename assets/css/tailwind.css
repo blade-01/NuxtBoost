@@ -198,7 +198,7 @@
   }
 
   .btn-white {
-    @apply bg-white text-gray-700 hover:bg-gray-50 transition-all duration-300 border border-gray-300;
+    @apply bg-white text-gray-700 hover:bg-gray-50 dark:hover:bg-slate-700 transition-all duration-300 border border-gray-300;
   }
 
   /* SIZES */
@@ -285,6 +285,11 @@
   .zoom-enter-from,
   .zoom-leave-to {
     transform: scale(0);
+  }
+
+  /* TAILVUE TOAST  */
+  #ModalBase {
+    @apply !z-[1102];
   }
 
   /* PRIME VUE CUSTOMIZATIONS */
