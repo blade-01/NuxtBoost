@@ -29,6 +29,11 @@ export default () => {
       route: "/dashboard/modal"
     },
     {
+      name: "Table Samples",
+      icon: "table",
+      route: "/dashboard/table"
+    },
+    {
       name: "User",
       icon: "account",
       show: false,
