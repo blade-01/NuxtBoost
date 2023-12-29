@@ -13,7 +13,7 @@ const toggleSidebar = () => {
     <NavigationSidebar :nav="nav" />
     <main class="sidebar-wrapper" :class="{ 'active-mainbar': nav }">
       <div class="relative">
-        <NavigationTopbar @toggle-sidebar="toggleSidebar" />
+        <NavigationTopbar @toggle-sidebar="toggleSidebar" :isNavOpen="nav" />
         <div class="p-4">
           <NuxtPage />
         </div>
