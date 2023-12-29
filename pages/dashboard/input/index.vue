@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import useValidations from "~/composables/useValidations";
+const { $toast } = useNuxtApp();
 definePageMeta({ layout: "dashboard" });
 useHead({
   title: "Forms",
@@ -58,6 +59,21 @@ function search(event: any) {
 const { autocompleteStyle, chipStyle } = usePvStyle();
 const locations = ref<any>("");
 const chips = ref<any>(["hi"]);
+
+function handleFormSubmit(values: any) {
+  console.log(values);
+  $toast.success("Form submitted successfully");
+}
+
+function onInvalidSubmit() {
+  const el = document.querySelector(".error");
+  if (el) {
+    el.classList.add("scroll-mt-16");
+    el.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+}
 </script>
 
 <template>
@@ -65,7 +81,12 @@ const chips = ref<any>(["hi"]);
     <p class="title mb-5 text-4xl">Form Input Samples</p>
     <div>
       <!-- Form -->
-      <Form v-slot="{ errors, values }" :validation-schema="mainSchema">
+      <Form
+        v-slot="{ errors, values }"
+        :validation-schema="mainSchema"
+        @submit="handleFormSubmit"
+        @invalid-submit="onInvalidSubmit"
+      >
         <div class="space-y-5">
           <!-- Basic Inputs -->
           <div>

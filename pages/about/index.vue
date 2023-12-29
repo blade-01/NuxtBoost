@@ -27,8 +27,8 @@
         >
         for mocking apps swiftly. With
         <strong
-          >file-based routing, components auto importing, I18n, PWA, reusable
-          components</strong
+          >file-based routing, components auto importing, I18n, reusable components,
+          composables</strong
         >
         and uses <strong>TailwindCSS</strong> for styling and <strong>Iconify</strong> for
         icons.
