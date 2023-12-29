@@ -21,11 +21,30 @@ Inspired by <a href="https://github.com/blade-01/vueboost">Vue Boost</a>
 
 <br>
 
+<!-- omit in toc -->
+## Table of Contents
+
+- [Features](#features)
+- [Pre-Packed](#pre-packed)
+  - [UI Frameworks](#ui-frameworks)
+  - [Icons](#icons)
+  - [Reuseable Components](#reuseable-components)
+  - [Composables](#composables)
+  - [Nuxt Modules](#nuxt-modules)
+  - [Plugins](#plugins)
+  - [Coding Style](#coding-style)
+  - [DevTools](#dev-tools)
+- [Try It Now!](#try-it-now)
+- [Checklist](#checklist)
+- [Usage](#usage)
+- [Why](#why)
+- [Acknowledgments](#acknowledgments)
+
 ## Features
 
 - [💚 Nuxt 3](https://nuxt.com/) - SSR, ESR, File-based routing, components auto importing, modules, etc.
 
-- ⚡️ Vite - Instant HMR
+<!-- - ⚡️ Vite - Instant HMR -->
 
 - 🍍 [State Management via Pinia](https://pinia.vuejs.org/)
 
@@ -78,15 +97,15 @@ Inspired by <a href="https://github.com/blade-01/vueboost">Vue Boost</a>
     - [Side](/components/Ui/Modal/Side.vue) - Side modal component (left, right, top, bottom)
     - [Center](/components/Ui/Modal/Center.vue) - Center modal component
 - [Samples Folder](/pages/dashboard/)
-  - You can find out how to use these components by clicking [Dashboard Folder](/pages/dashboard/) or visit [NuxtBoost Dashboard](https://nuxtboost.verce.app) for the visualization
+  - You can find out how to use these components by clicking [Dashboard Folder](/pages/dashboard/) or visit [NuxtBoost Dashboard](https://nuxt-boost.vercel.app) for the visualization
 
 ### Composables
 
 - [Utils](/utils/index.ts) - Main utility has encompasses basic day-to-day functions.
-- [Theme](/composables/useTheme.ts) - Theme witch composable.
+- [Theme](/composables/useTheme.ts) - Theme switch composable.
 - [PrimeVue Styles](/composables/usePvStyle.ts) - PrimeVue styling composable.
-- [Shortcut Keys](/composables/useShortcut.ts) - Shortcut composable (save, esc etc...).
-- [Sidebar](/composables/useSidebarUtils.ts) - Dashboard sidebar composable, this can be seen on dashboard collapsible.
+- [Shortcut Keys](/composables/useShortcut.ts) - Shortcut composable (save, esc etc...), an example of this can be seen on dashboard collapsible.
+- [Sidebar](/composables/useSidebarUtils.ts) - Dashboard sidebar composable.
 - [Validation Schema](/composables/useValidations.ts) - VeeValidate validation schemas composable.
 
 ### Nuxt Modules
@@ -128,7 +147,7 @@ Inspired by <a href="https://github.com/blade-01/vueboost">Vue Boost</a>
 
 ### GitHub Template
 
-[Create a repo from this template on GitHub](https://github.com/blade-01/nuxtboost/generate).
+[Create a repo from this template on GitHub](https://github.com/blade-01/NuxtBoost/generate).
 
 ### Clone to local
 
@@ -144,7 +163,6 @@ pnpm i or yarn i # If you don't have pnpm installed, run: npm install -g pnpm
 
 When you use this template, try follow the checklist to update your info properly
 
-- [ ] Change the author name in `LICENSE`
 - [ ] Change the title and configurations in `nuxt.config.ts`
 - [ ] Change the favicon in `public`
 - [ ] Clean up the READMEs and remove routes
@@ -190,3 +208,14 @@ Deploy anywhere.
 ## Why
 
 To boost our collective productivity as developers.
+
+
+## Acknowledgments
+
+I would like to express my gratitude to the following individuals:
+
+- **Jahid Anowar**: In memory of my dear mentor, a friend, and a remarkable leader, whose guidance and support have been an unwavering pillar in my journey as a developer. Whenever I stumbled into coding challenges, [Jahid](https://jahid.dev/) was the guiding light, offering invaluable insights and solutions. His mentorship went beyond just coding; he generously shared his wisdom, helped me secure job opportunities, and imparted invaluable lessons that shaped my career. His commitment to excellence was tireless, evident in every project he touched. Much of the essence embedded within this project was inspired by the profound wisdom I gained while working alongside him on his codebase. His profound impact on my career cannot be overstated; he has forever shaped my trajectory. Rest in peace, my Nuxt Wizard. Your legacy will endure, and your teachings will continue to guide me forward 🖤
+
+- **Friends and Family**: This wouldn't have been possible without support from friends and family, I really appreciate y'all.
+
+- **Myself**: Lastly, I want to thank [me](https://www.youtube.com/watch?v=wGRF3GQ4Wdk).
