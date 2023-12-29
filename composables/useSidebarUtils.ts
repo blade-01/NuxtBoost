@@ -24,18 +24,20 @@ export default () => {
       route: "/dashboard/input"
     },
     {
-      name: "User",
-      icon: "account",
+      name: "Modal Samples",
+      icon: "help-box-multiple-outline",
+      route: "/dashboard/modal"
+    },
+    {
+      name: "Table Samples",
+      icon: "table",
+      route: "/dashboard/table"
+    },
+    {
+      name: "Others",
+      icon: "alien",
       show: false,
       sub: [
-        {
-          name: "Account",
-          route: "/"
-        },
-        {
-          name: "Settings",
-          route: "/"
-        },
         {
           name: "Logout",
           route: "/"

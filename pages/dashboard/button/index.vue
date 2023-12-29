@@ -7,6 +7,7 @@ useHead({
 
 <template>
   <div>
+    <p class="title mb-5 text-4xl">Button Samples</p>
     <p class="title pb-1.5">Buttons With Icons</p>
     <div class="flex gap-3.5 items-center flex-wrap">
       <UiBtn label="Click Me" append-icon="mdi:emoticon" />

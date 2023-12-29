@@ -40,7 +40,6 @@
     `App.{js,ts,vue}`,
     `app.{js,ts,vue}`,
     `node_modules/tailvue/dist/tailvue.es.js`,
-    `node_modules/vuewindui/src/components/**/*.vue`,
   ],
   // variants: {
   //   backgroundColor: [

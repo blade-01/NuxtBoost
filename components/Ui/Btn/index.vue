@@ -25,11 +25,22 @@ const sizes = computed(() => {
     ? "btn-lg"
     : "btn";
 });
+
+const button = ref<HTMLElement | null>(null);
+
+function triggerClick() {
+  button.value?.click();
+}
+
+defineExpose({
+  triggerClick,
+});
 </script>
 
 <template>
   <button
     :class="[{ 'flex items-center gap-2': prependIcon || appendIcon }, outerClass, sizes]"
+    ref="button"
   >
     <Icon :name="`${prependIcon}`" :size="prependSize" v-if="prependIcon" />
     <span v-if="label">{{ label }}</span>

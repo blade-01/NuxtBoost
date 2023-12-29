@@ -1,4 +1,5 @@
-import { object, string, ref as yref, array, date } from "yup";
+import { object, string, ref as yref, array, date, mixed } from "yup";
+import { isValidPhoneNumber } from "libphonenumber-js";
 export default function () {
   // Validation messages
   const validation = {
@@ -9,6 +10,7 @@ export default function () {
       `${field} must be at least ${limit} characters`,
     max: (field: string, limit?: number) =>
       `${field} must be at most ${limit} characters`,
+    valid: (field: string) => `Please provide a valid ${field}`,
     password:
       "Provide a password with at least 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character",
     password_confirmation: "Please ensure your passwords match"
@@ -70,11 +72,21 @@ export default function () {
         (value: any) => value.length > 0
       )
       .required(validation.required("City")),
-    date: date().required(validation.required("Date")),
-    month: date().required(validation.required("Month")),
-    year: date().required(validation.required("Year")),
-    date_time: date().required(validation.required("Date Time")),
-    time: date().required(validation.required("Time")),
+    date: date()
+      .required(validation.required("Date"))
+      .typeError(validation.valid("Date")),
+    month: date()
+      .required(validation.required("Month"))
+      .typeError(validation.valid("Month")),
+    year: date()
+      .required(validation.required("Year"))
+      .typeError(validation.valid("Year")),
+    date_time: date()
+      .required(validation.required("Date Time"))
+      .typeError(validation.valid("Date Time")),
+    time: date()
+      .required(validation.required("Time"))
+      .typeError(validation.valid("Time")),
     multiple: array()
       .of(date().required())
       .required(validation.required("Multiple Dates"))
@@ -82,7 +94,8 @@ export default function () {
         "length",
         validation.required("Multiple Dates"),
         (value: any) => value.length > 0
-      ),
+      )
+      .typeError(validation.valid("Multiple Dates")),
     range: array()
       .of(date().required())
       .required(validation.required("Date Range"))
@@ -91,6 +104,35 @@ export default function () {
         validation.required("Date Range"),
         (value: any) => value.length > 0
       )
+      .typeError(validation.valid("Date Range")),
+    phone_number: string().test(
+      "phone",
+      validation.valid("Phone Number"),
+      (value) => {
+        if (!value) return true;
+        return isValidPhoneNumber(value);
+      }
+    ),
+    autocomplete: string().required(validation.required("Autocomplete")),
+    chips: string().required(validation.required("Chips")),
+    file: mixed().required(validation.required("File")),
+    files: array()
+      .of(mixed().required())
+      .test(
+        "length",
+        validation.required("Files"),
+        (value: any) => value.length > 0
+      )
+      .required(validation.required("Files")),
+    image: mixed().required(validation.required("File")),
+    images: array()
+      .of(mixed().required())
+      .test(
+        "length",
+        validation.required("Images"),
+        (value: any) => value.length > 0
+      )
+      .required(validation.required("Images"))
   });
 
   return { mainSchema };
