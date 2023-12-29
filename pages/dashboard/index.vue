@@ -55,7 +55,7 @@ const {
       Request" for the uninitiated - following our
       <a
         class="underline font-extralight cursor-pointer"
-        href="https://github.com/blade-01/vueboost/blob/main/README.md"
+        href="https://github.com/blade-01/NuxtBoost/blob/main/CONTRIBUTING.md"
         target="_blank"
         >contribution</a
       >
