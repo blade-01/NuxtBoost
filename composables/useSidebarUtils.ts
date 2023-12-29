@@ -34,18 +34,10 @@ export default () => {
       route: "/dashboard/table"
     },
     {
-      name: "User",
-      icon: "account",
+      name: "Others",
+      icon: "alien",
       show: false,
       sub: [
-        {
-          name: "Account",
-          route: "/"
-        },
-        {
-          name: "Settings",
-          route: "/"
-        },
         {
           name: "Logout",
           route: "/"
