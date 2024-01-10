@@ -23,7 +23,7 @@ const toggleLocales = () => {
       <NuxtLink to="/about"
         ><Icon name="fluent:tab-desktop-multiple-20-regular" size="23" class="link"
       /></NuxtLink>
-      <a href="https://github.com/blade-01/vueboost" target="_blank"
+      <a href="https://github.com/blade-01/NuxtBoost" target="_blank"
         ><Icon name="mdi:github" size="23" class="link"
       /></a>
     </div>
