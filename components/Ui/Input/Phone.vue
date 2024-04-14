@@ -86,7 +86,7 @@ const options = ref({
         class="absolute inset-y-0 left-0 flex items-center pl-3 icon-button prepend"
       >
         <slot name="prependIcon">
-          <Icon :name="prependIcon" class="w-5 h-5 text-gray-400 icon" />
+          <Icon :name="prependIcon" class="w-5 h-5" />
         </slot>
       </button>
       <vue-tel-input
@@ -111,7 +111,7 @@ const options = ref({
         class="absolute inset-y-0 right-0 flex items-center pr-3 icon-button append"
       >
         <slot name="appendIcon">
-          <Icon :name="appendIcon" class="w-5 h-5 text-gray-400 icon" />
+          <Icon :name="appendIcon" class="w-5 h-5" />
         </slot>
       </button>
     </div>
@@ -123,11 +123,11 @@ const options = ref({
 
 <style scoped>
 :deep(.vue-tel-input) {
-  @apply input-style !px-0 focus-within:shadow-none focus-within:ring-0 focus-within:border-white focus-within:outline-none;
+  @apply !border-border-primary !px-0 focus-within:!shadow-none focus-within:!ring-0 focus-within:!border-border-primary focus-within:!outline-none !bg-input-primary focus-within:!border focus:!border-border-primary;
 }
 
 :deep(.vti__dropdown-list) {
-  @apply z-10 w-[250px] lg:w-[370px] bg-white text-[#3f3f46] border-none rounded-[4px];
+  @apply z-20 w-[250px] lg:w-[370px] !bg-input-primary text-text-primary border-none rounded-[4px];
 }
 
 :deep(.vti__dropdown-item) {
@@ -140,7 +140,7 @@ const options = ref({
 }
 
 :deep(.vti__input) {
-  @apply bg-transparent border-none focus:!border-none focus:!outline-none focus-within:ring-0 appearance-none m-0;
+  @apply !bg-input-primary border-none focus:!border-none focus:!outline-none focus-within:ring-0 m-0;
 }
 
 :deep(.vue-tel-input.error) {
@@ -148,7 +148,11 @@ const options = ref({
 }
 
 :deep(ul.vti__dropdown-list > .vti__input.vti__search_box) {
-  @apply !border-solid !border !border-[#E5E7EB] rounded-[4px] m-1 block mx-auto sticky top-1.5 z-10 bg-white;
+  @apply !border-solid !border !border-border-primary rounded-[4px] m-1 block mx-auto sticky top-1.5 z-10 !bg-input-primary dark:!bg-input-secondary;
+}
+
+:deep(.vti__dropdown-item.highlighted) {
+  @apply !bg-selected-primary;
 }
 
 :deep(.vti__dropdown.open) {
