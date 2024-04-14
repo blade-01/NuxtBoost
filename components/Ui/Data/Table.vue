@@ -75,7 +75,10 @@ function handleScroll(event: Event) {
 
     <table class="w-full table-auto text-sm text-left">
       <thead>
-        <tr class="bg-gray-300 dark:bg-darkBg text-xs uppercase" :class="tableHeader">
+        <tr
+          class="bg-bg-primary dark:bg-bg-secondary text-xs uppercase"
+          :class="tableHeader"
+        >
           <th
             v-if="props.selectable"
             class="p-3 bg-inherit border-r w-[30px]"
@@ -115,14 +118,14 @@ function handleScroll(event: Event) {
       </thead>
       <tbody class="w-full">
         <tr v-if="filteredItems.length <= 0">
-          <td class="text-center py-5 bg-white" :colspan="headers.length + 1">
+          <td class="text-center py-5 bg-bg-primary" :colspan="headers.length + 1">
             {{ $t("no_results_found") }}
           </td>
         </tr>
         <tr
           v-for="(item, i) in filteredItems"
           :key="i"
-          class="border-b last:border-b-0 bg-white dark:bg-darkBgSec group"
+          class="border-b last:border-b-0 bg-bg-primary dark:bg-bg-secondary group"
           :class="rowClasses"
         >
           <td
@@ -177,7 +180,7 @@ function handleScroll(event: Event) {
 
 <style scoped>
 .sticky-column-shadow {
-  @apply shadow-md border-r-gray-100 dark:border-r-darkBg;
+  @apply shadow-md border-r-bg-primary dark:border-r-bg-secondary;
 }
 .table-fixed-column table {
   border-collapse: separate;

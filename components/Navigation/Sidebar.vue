@@ -41,21 +41,17 @@ defineProps<{ nav: boolean }>();
                   <span class="font-light">{{ link.name }}</span>
                 </span>
                 <Icon
-                  name="mdi:menu-down-outline"
+                  name="mdi:chevron-down"
                   width="18"
                   :class="
-                    link.show
-                      ? 'transition-all ease-in duration-300 transform rotate-180'
-                      : 'transition-all ease-out duration-300 transform rotate-40'
+                    link?.show ? 'sidebar--active-chevron' : 'sidebar--inactive-chevron'
                   "
                 ></Icon>
               </span>
               <span
                 class="flex flex-col"
                 :class="[
-                  link.show
-                    ? 'transition-[max-height] max-h-[5000px] duration-200 ease-in'
-                    : 'transition-[max-height] max-h-0 duration-300 ease-out overflow-hidden',
+                  link?.show ? 'sidebar--active-collapse' : 'sidebar--inactive-collapse',
                 ]"
               >
                 <span v-for="(sub, index) in link.sub" :key="index">
@@ -80,25 +76,52 @@ defineProps<{ nav: boolean }>();
 
 <style scoped>
 .sidebar {
-  @apply bg-white dark:bg-darkBgSec shadow-sm z-40 w-[260px] fixed top-0 md:left-0  -left-full transition-[left];
+  @apply shadow-sm z-40 fixed top-0 md:left-0 -left-full transition-[left] duration-500 ease-out
+  bg-sidebar-primary 
+  /* DARK MODE */
+  dark:bg-sidebar-secondary
+  /* WIDTH */
+  w-[var(--sidebar-width)] md:w-[var(--sidebar-width-md)] lg:w-[var(--sidebar-width-lg)] 2xl:w-[var(--sidebar-width-2xl)];
 }
 
 .sidebar-header {
-  @apply sticky top-0 bg-white dark:bg-darkBgSec w-full h-[60px] shadow-sm p-4 flex justify-between items-center;
+  @apply sticky top-0 w-full h-[var(--sidebar-height)] shadow-sm p-4 flex justify-between items-center
+  bg-sidebar-primary 
+  /* DARK MODE */
+  dark:bg-sidebar-secondary;
 }
 
 .sidebar-content {
-  @apply h-screen md:h-[calc(100vh-60px)] py-6 px-4 overflow-y-auto;
+  @apply h-[calc(100vh-var(--sidebar-height))] py-6 px-4 overflow-y-auto;
 }
 
 .active-sidebar {
-  @apply left-0 w-[260px] md:-left-full;
+  @apply left-0 w-[var(--sidebar-width)] md:w-[var(--sidebar-width-md)] lg:w-[var(--sidebar-width-lg)] 2xl:w-[var(--sidebar-width-2xl)] md:-left-full;
 }
 
 .sidebar-item {
-  @apply p-3 transition-all ease-in-out duration-300 hover:bg-[#00000042] hover:text-white hover:rounded-md cursor-pointer flex items-center gap-2;
+  @apply p-3 transition-all ease-in-out duration-300 cursor-pointer flex items-center gap-2
+  hover:bg-link-primary 
+  dark:hover:bg-link-secondary
+  hover:rounded-md;
 }
 .sidebar-active {
-  @apply bg-[rgb(140,139,139)] dark:bg-[rgba(225,225,225,0.1)] rounded-md text-white hover:bg-[rgb(169,169,169)] dark:hover:bg-[rgba(225,225,225,0.1)] !important;
+  @apply bg-link-primary dark:bg-link-secondary rounded-md text-text-primary dark:text-text-secondary;
+}
+
+.sidebar--active-chevron {
+  @apply transition-all ease-in duration-300 transform rotate-180;
+}
+
+.sidebar--inactive-chevron {
+  @apply transition-all ease-out duration-300 transform rotate-0;
+}
+
+.sidebar--active-collapse {
+  @apply transition-[max-height] max-h-[5000px] duration-200 ease-in;
+}
+
+.sidebar--inactive-collapse {
+  @apply transition-[max-height] max-h-0 duration-300 ease-out overflow-hidden;
 }
 </style>

@@ -6,14 +6,19 @@ const nav = ref<boolean>(false);
 const toggleSidebar = () => {
   nav.value = !nav.value;
 };
+
+provide("collapsible", {
+  nav,
+  toggleSidebar,
+});
 </script>
 
 <template>
   <div class="relative overflow-x-clip">
     <NavigationSidebar :nav="nav" />
-    <main class="sidebar-wrapper" :class="{ 'active-mainbar': nav }">
+    <main class="sidebar-wrapper" :class="{ 'mainbar-opened': nav }">
       <div class="relative">
-        <NavigationTopbar @toggle-sidebar="toggleSidebar" :isNavOpen="nav" />
+        <NavigationTopbar />
         <div class="p-4">
           <NuxtPage />
         </div>
@@ -24,9 +29,14 @@ const toggleSidebar = () => {
 
 <style scoped>
 .sidebar-wrapper {
-  @apply bg-gray-200 dark:bg-darkBg h-screen overflow-y-auto w-full md:ml-[260px] md:w-[calc(100%-260px)] transition-[margin-left];
+  @apply bg-bg-primary dark:bg-bg-secondary h-screen overflow-y-auto w-full transition-[margin-left] ease-out duration-500
+  /* MARGIN */
+  lg:ml-[var(--sidebar-width-lg)] 2xl:ml-[var(--sidebar-width-2xl)]
+  /* WIDTH */
+  lg:w-[calc(100%-var(--sidebar-width-lg))] 2xl:w-[calc(100%-var(--sidebar-width-2xl))];
 }
-.active-mainbar {
-  @apply ml-[260px] md:ml-0 md:w-full;
+.mainbar-opened {
+  @apply ml-[var(--sidebar-width)] 
+  md:ml-0 md:w-full;
 }
 </style>

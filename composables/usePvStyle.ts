@@ -15,7 +15,7 @@ export default () => {
         class: "right-3 dropdown-icon"
       },
       panel: {
-        class: "bg-white dark:bg-darkBg "
+        class: "bg-link-primary dark:bg-link-secondary"
       },
       header: {
         class: "p-2 bg-inherit dropdown-text"
@@ -83,31 +83,35 @@ export default () => {
   const datePickerStyle = computed(() => {
     return {
       input: { class: "input-style ring-0" },
-      panel: { class: "bg-white dark:bg-darkBgSec dropdown-text p-3" },
-      header: { class: "bg-white dark:bg-darkBgSec dropdown-text py-3.5" }
+      panel: { class: "bg-bg-primary dark:bg-bg-secondary dropdown-text p-3" },
+      header: {
+        class: "bg-bg-primary dark:bg-bg-secondary dropdown-text py-3.5"
+      }
     };
   });
 
   const autocompleteStyle = computed(() => {
     return {
       root: {
-        class: "input-style !h-auto !py-2 !bg-transparent !ring-0"
+        class: "input-style !h-auto !py-2 !ring-0"
       },
       input: {
         class: "bg-transparent border-none outline-none ring-0 !px-0"
       },
       inputToken: {
         class:
-          "placeholder:font-light placeholder:text-secondary dark:placeholder:text-[#d8d8d8]"
+          "placeholder:font-light placeholder:text-text-secondary dark:placeholder:text-text-file"
       },
       panel: {
         class:
-          "bg-white dark:bg-darkBgSec dropdown-text max-h-[200px] overflow-y-auto w-[250px] xl:w-[350px]"
+          "bg-bg-primary dark:bg-bg-secondary dropdown-text max-h-[200px] overflow-y-auto w-[250px] xl:w-[350px]"
       },
-      header: { class: "bg-white dark:bg-darkBgSec dropdown-text py-3.5" },
+      header: {
+        class: "bg-bg-primary dark:bg-bg-secondary dropdown-text py-3.5"
+      },
       container: { class: "flex items-center gap-2 flex-wrap" },
       token:
-        "gap-2 inline-flex items-center bg-[#bbbbbbb3] dark:bg-slate-500 rounded-full dropdown-token !px-1.5",
+        "gap-2 inline-flex items-center bg-bg-primary dark:bg-bg-secondary rounded-full dropdown-token !px-1.5",
       tokenLabel: {
         class: "dropdown-token-label"
       },
@@ -133,15 +137,18 @@ export default () => {
   const editorStyle = computed(() => {
     return {
       input: { class: "input-style ring-0" },
-      panel: { class: "bg-white dark:bg-darkBgSec dropdown-text p-3" },
-      header: { class: "bg-white dark:bg-darkBgSec dropdown-text py-3.5" }
+      panel: { class: "bg-bg-primary dark:bg-bg-secondary dropdown-text p-3" },
+      header: {
+        class: "bg-bg-primary dark:bg-bg-secondary dropdown-text py-3.5"
+      }
     };
   });
 
   const dialogStyle = computed(() => {
     return {
       root: {
-        class: "bg-white dark:bg-darkBgSec dialog rounded-lg shadow-xl border"
+        class:
+          "bg-bg-primary dark:bg-bg-secondary dialog rounded-lg shadow-xl border"
       },
       header: {
         class: "p-4 flex justify-between items-center border-b"
@@ -161,7 +168,8 @@ export default () => {
   const tooltipStyle = computed(() => {
     return {
       root: {
-        class: "bg-white dark:bg-darkBgSec dialog rounded-lg shadow-xl border"
+        class:
+          "bg-bg-primary dark:bg-bg-secondary dialog rounded-lg shadow-xl border"
       },
       text: "text-white !text-xs !p-1.5"
     };

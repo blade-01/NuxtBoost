@@ -59,7 +59,7 @@ watch(
       @click.self="handleOuterClick"
     >
       <div
-        class="flex bg-white dark:bg-darkBgSec h-full sheet"
+        class="flex bg-bg-primary dark:bg-bg-secondary h-full sheet"
         :class="{
           'w-full sm:w-1/4': size === 'sm',
           'w-full md:w-1/2': size === 'md',
@@ -72,7 +72,7 @@ watch(
           <!-- Header  -->
           <slot name="header">
             <div
-              class="flex items-center w-full p-5 border-b dark:border-b-gray-500"
+              class="flex items-center w-full p-5 border-b dark:border-b-border-secondary"
               :class="
                 position === 'left'
                   ? 'justify-between'
@@ -80,13 +80,16 @@ watch(
               "
             >
               <slot name="title">
-                <h4 v-if="title" class="font-semibold dark:text-white text-gray-700">
+                <h4
+                  v-if="title"
+                  class="font-semibold dark:text-text-secondary text-text-primary"
+                >
                   {{ title }}
                 </h4>
               </slot>
               <slot name="close">
                 <button
-                  class="text-gray-800 dark:text-gray-300 border rounded-xl dark:border-gray-600 p-1"
+                  class="text-text-primary dark:text-text-secondary border rounded-xl dark:border-border-secondary p-1"
                   @click="handleClose"
                 >
                   <svg
@@ -108,7 +111,7 @@ watch(
 
           <!-- Main Slot  -->
           <div
-            class="h-full overflow-y-scroll p-5 bg-white dark:bg-darkBgSec pb-32 sheet-body"
+            class="h-full overflow-y-scroll p-5 bg-bg-primary dark:bg-bg-secondary pb-32 sheet-body"
             :class="{ '!h-auto': position === 'top' }"
           >
             <slot />
@@ -117,7 +120,7 @@ watch(
           <!-- Footer  -->
           <div
             v-if="$slots.footer"
-            class="footer fixed gap-3 sm:absolute bottom-0 sm:bottom-8 xl:bottom-0 right-0 left-0 bg-white dark:bg-darkBgSec px-4 py-2 flex justify-end border-t dark:border-t-gray-500 z-50"
+            class="footer fixed gap-3 sm:absolute bottom-0 sm:bottom-8 xl:bottom-0 right-0 left-0 bg-bg-primary dark:bg-bg-secondary px-4 py-2 flex justify-end border-t dark:border-t-border-secondary z-50"
           >
             <slot name="footer"> </slot>
           </div>
