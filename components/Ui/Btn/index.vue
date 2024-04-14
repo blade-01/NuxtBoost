@@ -7,10 +7,12 @@ interface Props {
   appendSize?: string;
   outerClass?: string;
   size?: "xs" | "sm" | "md" | "lg";
+  isLoading?: boolean;
+  disabled?: boolean;
 }
 const props = withDefaults(defineProps<Props>(), {
-  prependSize: "24",
-  appendSize: "24",
+  prependSize: "20",
+  appendSize: "20",
   // size: "sm", // You can set default size if you want
 });
 
@@ -39,13 +41,34 @@ defineExpose({
 
 <template>
   <button
-    :class="[{ 'flex items-center gap-2': prependIcon || appendIcon }, outerClass, sizes]"
+    :class="[
+      {
+        'flex items-center gap-2': prependIcon || appendIcon,
+        '!bg-opacity-70 items-center justify-center !cursor-not-allowed !pointer-events-none':
+          isLoading || disabled,
+      },
+      outerClass,
+      sizes,
+    ]"
+    :disabled="isLoading"
     ref="button"
   >
-    <Icon :name="`${prependIcon}`" :size="prependSize" v-if="prependIcon" />
-    <span v-if="label">{{ label }}</span>
-    <slot></slot>
-    <Icon :name="`${appendIcon}`" :size="appendSize" v-if="appendIcon" />
+    <div
+      v-if="!isLoading"
+      :class="[
+        {
+          'flex items-center gap-2': prependIcon || appendIcon,
+        },
+      ]"
+    >
+      <Icon :name="`${prependIcon}`" :size="prependSize" v-if="prependIcon" />
+      <span v-if="label">{{ label }}</span>
+      <slot></slot>
+      <Icon :name="`${appendIcon}`" :size="appendSize" v-if="appendIcon" />
+    </div>
+    <div v-else>
+      <Icon name="bx:loader" class="animate-spin" size="16" />
+    </div>
   </button>
 </template>
 
