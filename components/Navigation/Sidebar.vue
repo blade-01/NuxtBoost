@@ -76,25 +76,27 @@ defineProps<{ nav: boolean }>();
 
 <style scoped>
 .sidebar {
-  @apply shadow-sm z-40 w-[260px] fixed top-0 md:left-0 -left-full transition-[left]
+  @apply shadow-sm z-40 fixed top-0 md:left-0 -left-full transition-[left] duration-500 ease-out
   bg-sidebar-primary 
   /* DARK MODE */
-  dark:bg-sidebar-secondary;
+  dark:bg-sidebar-secondary
+  /* WIDTH */
+  w-[var(--sidebar-width)] md:w-[var(--sidebar-width-md)] lg:w-[var(--sidebar-width-lg)] 2xl:w-[var(--sidebar-width-2xl)];
 }
 
 .sidebar-header {
-  @apply sticky top-0 w-full h-[60px] shadow-sm p-4 flex justify-between items-center
+  @apply sticky top-0 w-full h-[var(--sidebar-height)] shadow-sm p-4 flex justify-between items-center
   bg-sidebar-primary 
   /* DARK MODE */
   dark:bg-sidebar-secondary;
 }
 
 .sidebar-content {
-  @apply h-screen md:h-[calc(100vh-60px)] py-6 px-4 overflow-y-auto;
+  @apply h-[calc(100vh-var(--sidebar-height))] py-6 px-4 overflow-y-auto;
 }
 
 .active-sidebar {
-  @apply left-0 w-[260px] md:-left-full;
+  @apply left-0 w-[var(--sidebar-width)] md:w-[var(--sidebar-width-md)] lg:w-[var(--sidebar-width-lg)] 2xl:w-[var(--sidebar-width-2xl)] md:-left-full;
 }
 
 .sidebar-item {
