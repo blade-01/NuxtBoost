@@ -118,11 +118,11 @@ function handleDelete() {
         <UiDataTable :headers="headers" :items="items">
           <template #actions="item">
             <div class="flex space-x-2">
-              <UiBtn class="btn-white !p-0 w-8 h-8 grid place-content-center">
+              <UiBtn class="btn-btn-primary !p-0 w-8 h-8 grid place-content-center">
                 <Icon name="bx:edit" size="16" />
               </UiBtn>
               <UiBtn
-                class="btn-white !p-0 w-8 h-8 grid place-content-center"
+                class="btn-btn-primary !p-0 w-8 h-8 grid place-content-center"
                 @click="handleDelete"
               >
                 <Icon name="bx:trash" size="16" />
@@ -147,11 +147,11 @@ function handleDelete() {
           </template>
           <template #actions="item">
             <div class="flex space-x-2">
-              <UiBtn class="btn-white !p-0 w-8 h-8 grid place-content-center">
+              <UiBtn class="btn-btn-primary !p-0 w-8 h-8 grid place-content-center">
                 <Icon name="bx:edit" size="16" />
               </UiBtn>
               <UiBtn
-                class="btn-white !p-0 w-8 h-8 grid place-content-center"
+                class="btn-btn-primary !p-0 w-8 h-8 grid place-content-center"
                 @click="handleDelete"
               >
                 <Icon name="bx:trash" size="16" />
@@ -173,11 +173,11 @@ function handleDelete() {
         >
           <template #actions="item">
             <div class="flex space-x-2">
-              <UiBtn class="btn-white !p-0 w-8 h-8 grid place-content-center">
+              <UiBtn class="btn-btn-primary !p-0 w-8 h-8 grid place-content-center">
                 <Icon name="bx:edit" size="16" />
               </UiBtn>
               <UiBtn
-                class="btn-white !p-0 w-8 h-8 grid place-content-center"
+                class="btn-btn-primary !p-0 w-8 h-8 grid place-content-center"
                 @click="handleDelete"
               >
                 <Icon name="bx:trash" size="16" />
@@ -200,11 +200,11 @@ function handleDelete() {
         >
           <template #actions="item">
             <div class="flex space-x-2">
-              <UiBtn class="btn-white !p-0 w-8 h-8 grid place-content-center">
+              <UiBtn class="btn-btn-primary !p-0 w-8 h-8 grid place-content-center">
                 <Icon name="bx:edit" size="16" />
               </UiBtn>
               <UiBtn
-                class="btn-white !p-0 w-8 h-8 grid place-content-center"
+                class="btn-btn-primary !p-0 w-8 h-8 grid place-content-center"
                 @click="handleDelete"
               >
                 <Icon name="bx:trash" size="16" />
@@ -226,11 +226,11 @@ function handleDelete() {
         >
           <template #actions="item">
             <div class="flex space-x-2">
-              <UiBtn class="btn-white !p-0 w-8 h-8 grid place-content-center">
+              <UiBtn class="btn-btn-primary !p-0 w-8 h-8 grid place-content-center">
                 <Icon name="bx:edit" size="16" />
               </UiBtn>
               <UiBtn
-                class="btn-white !p-0 w-8 h-8 grid place-content-center"
+                class="btn-btn-primary !p-0 w-8 h-8 grid place-content-center"
                 @click="handleDelete"
               >
                 <Icon name="bx:trash" size="16" />
