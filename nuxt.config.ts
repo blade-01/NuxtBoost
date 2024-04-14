@@ -11,7 +11,58 @@ export default defineNuxtConfig({
           content:
             "Boost your productivity with NuxtBoost - work smarter, not harder."
         },
-        { name: "theme-color", content: "#1e1e2e" }
+        {
+          property: "og:type",
+          content: "website"
+        },
+        {
+          property: "og:url",
+          content: "https://nuxt-boost.vercel.app"
+        },
+        {
+          property: "og:title",
+          content:
+            "NuxtBoost | Boost your productivity with NuxtBoost - work smarter, not harder."
+        },
+        {
+          property: "og:description",
+          content:
+            "Boost your productivity with NuxtBoost - work smarter, not harder."
+        },
+        {
+          property: "og:image",
+          content:
+            "https://res.cloudinary.com/bladencove/image/upload/v1700328807/RC/nb-light.svg"
+        },
+        {
+          property: "twitter:card",
+          content: "summary_large_image"
+        },
+        {
+          property: "twitter:url",
+          content: "https://nuxt-boost.vercel.app"
+        },
+        {
+          property: "twitter:title",
+          content:
+            "NuxtBoost | Boost your productivity with NuxtBoost - work smarter, not harder."
+        },
+        {
+          property: "twitter:description",
+          content:
+            "Boost your productivity with NuxtBoost - work smarter, not harder."
+        },
+        {
+          property: "twitter:image",
+          content:
+            "https://res.cloudinary.com/bladencove/image/upload/v1700328807/RC/nb-light.svg"
+        },
+        { name: "theme-color", content: "#1e1e2e" },
+        {
+          name: "viewport",
+          content:
+            "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+        }
       ],
       link: [{ rel: "icon", href: "/favicon.ico" }]
     }
