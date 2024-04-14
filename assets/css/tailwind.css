@@ -74,7 +74,7 @@
 
   /* TEXT */
   .text-style {
-    @apply text-text-primary dark:text-text-dark;
+    @apply text-text-primary dark:text-text-secondary;
   }
 
   /* FORM STYLE */
