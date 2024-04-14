@@ -69,7 +69,7 @@ const {
 <style scoped>
 /* CHART TITLE */
 .chart-bar {
-  @apply rounded-md p-4 mb-3 bg-white dark:bg-darkBgSec;
+  @apply rounded-md p-4 mb-3 bg-bg-primary dark:bg-bg-secondary;
 }
 
 .chart-title {
