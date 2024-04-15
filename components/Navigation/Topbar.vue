@@ -14,6 +14,9 @@ useShortcut({
     sidebarToggler.value?.triggerClick();
   },
 });
+defineProps<{
+  title: string | undefined;
+}>();
 </script>
 
 <template>
@@ -54,10 +57,12 @@ useShortcut({
           >
             <Icon name="mdi:menu" class="text-3xl font-bold cursor-pointer"></Icon>
           </UiBtn>
-          <p class="text-style text-2xl font-semibold">Welcome Blade!</p>
+          <p class="text-style text-2xl font-semibold">
+            {{ truncateString(title || "", 20) }}
+          </p>
         </div>
         <p class="text-style text-2xl font-semibold hidden md:flex pl-5">
-          Welcome Blade!
+          {{ truncateString(title || "", 20) }}
         </p>
         <div class="flex items-center gap-4">
           <Icon
