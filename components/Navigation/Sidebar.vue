@@ -7,15 +7,26 @@ defineProps<{ nav: boolean }>();
   <div class="sidebar" :class="{ 'active-sidebar': nav }">
     <div>
       <div class="sidebar-header">
-        <NuxtLink to="/">
+        <NuxtLink to="/" class="flex items-center gap-5">
           <nuxt-img
             provider="cloudinary"
-            :src="$colorMode.value === 'dark' ? '/nb-light.svg' : '/nb-dark.svg'"
+            src="/nb-light.svg"
             alt="logo"
             fit="inside"
-            height="60"
-            width="60"
+            height="50"
+            width="50"
+            v-if="$colorMode.value === 'dark'"
           />
+          <nuxt-img
+            provider="cloudinary"
+            src="/nb-dark.svg"
+            alt="logo"
+            fit="inside"
+            height="50"
+            width="50"
+            v-if="$colorMode.value === 'light'"
+          />
+          <span class="text-style dark:!text-white title">NuxtBoost</span>
         </NuxtLink>
       </div>
       <div class="sidebar-content">
@@ -76,8 +87,8 @@ defineProps<{ nav: boolean }>();
 
 <style scoped>
 .sidebar {
-  @apply shadow-sm z-40 fixed top-0 md:left-0 -left-full transition-[left] duration-500 ease-out
-  bg-sidebar-primary 
+  @apply shadow-sm z-40 fixed top-0 md:left-0 -left-full transition-[left] duration-[350ms] ease-out border-r border-r-border-primary dark:border-r-border-secondary
+  bg-sidebar-primary
   /* DARK MODE */
   dark:bg-sidebar-secondary
   /* WIDTH */
@@ -86,7 +97,7 @@ defineProps<{ nav: boolean }>();
 
 .sidebar-header {
   @apply sticky top-0 w-full h-[var(--sidebar-height)] shadow-sm p-4 flex justify-between items-center
-  bg-sidebar-primary 
+  bg-sidebar-primary border-b border-b-border-primary dark:border-b-border-secondary
   /* DARK MODE */
   dark:bg-sidebar-secondary;
 }
