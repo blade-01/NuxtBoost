@@ -6,11 +6,21 @@
       <div class="flex flex-col items-center gap-2">
         <nuxt-img
           provider="cloudinary"
-          :src="$colorMode.value === 'dark' ? '/nb-light.svg' : '/nb-dark.svg'"
+          src="/nb-light.svg"
           alt="logo"
           fit="inside"
           height="120"
           width="120"
+          v-if="$colorMode.value === 'dark'"
+        />
+        <nuxt-img
+          provider="cloudinary"
+          src="/nb-dark.svg"
+          alt="logo"
+          fit="inside"
+          height="120"
+          width="120"
+          v-if="$colorMode.value === 'light'"
         />
         <p class="text-base font-medium">Nuxt Boost</p>
       </div>
