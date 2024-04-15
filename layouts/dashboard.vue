@@ -17,12 +17,7 @@ provide("collapsible", {
   <div class="relative overflow-x-clip">
     <NavigationSidebar :nav="nav" />
     <main class="sidebar-wrapper" :class="{ 'mainbar-opened': nav }">
-      <div class="relative">
-        <NavigationTopbar />
-        <div class="p-4">
-          <NuxtPage />
-        </div>
-      </div>
+      <NuxtPage />
     </main>
   </div>
 </template>
