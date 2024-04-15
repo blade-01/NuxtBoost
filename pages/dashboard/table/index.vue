@@ -109,139 +109,141 @@ function handleDelete() {
 </script>
 
 <template>
-  <div>
-    <p class="title mb-5 text-4xl">Table Samples</p>
-    <div class="space-y-5">
-      <!-- Basic Table -->
-      <div>
-        <p class="title pb-2">Basic Table</p>
-        <UiDataTable :headers="headers" :items="items">
-          <template #actions="item">
-            <div class="flex space-x-2">
-              <UiBtn class="btn-btn-primary !p-0 w-8 h-8 grid place-content-center">
-                <Icon name="bx:edit" size="16" />
-              </UiBtn>
-              <UiBtn
-                class="btn-btn-primary !p-0 w-8 h-8 grid place-content-center"
-                @click="handleDelete"
-              >
-                <Icon name="bx:trash" size="16" />
-              </UiBtn>
-            </div>
-          </template>
-        </UiDataTable>
-      </div>
-      <!-- ./ Basic Table -->
+  <DashboardWrapper title="Tables">
+    <div>
+      <p class="title mb-5 text-4xl">Table Samples</p>
+      <div class="space-y-5">
+        <!-- Basic Table -->
+        <div>
+          <p class="title pb-2">Basic Table</p>
+          <UiDataTable :headers="headers" :items="items">
+            <template #actions="item">
+              <div class="flex space-x-2">
+                <UiBtn class="btn-btn-primary !p-0 w-8 h-8 grid place-content-center">
+                  <Icon name="bx:edit" size="16" />
+                </UiBtn>
+                <UiBtn
+                  class="btn-btn-primary !p-0 w-8 h-8 grid place-content-center"
+                  @click="handleDelete"
+                >
+                  <Icon name="bx:trash" size="16" />
+                </UiBtn>
+              </div>
+            </template>
+          </UiDataTable>
+        </div>
+        <!-- ./ Basic Table -->
 
-      <!-- Reshape-able Content Table -->
-      <div>
-        <p class="title pb-2">Reshape-able Content Table</p>
-        <UiDataTable :headers="headers" :items="items">
-          <template #status="item">
-            <span class="badge" :class="getStatusBadge(item.status)">{{
-              item?.status
-            }}</span>
-          </template>
-          <template #created_at="item">
-            <span>{{ formatDate(item?.created_at, "DD MMM, YYYY hh:mm A") }}</span>
-          </template>
-          <template #actions="item">
-            <div class="flex space-x-2">
-              <UiBtn class="btn-btn-primary !p-0 w-8 h-8 grid place-content-center">
-                <Icon name="bx:edit" size="16" />
-              </UiBtn>
-              <UiBtn
-                class="btn-btn-primary !p-0 w-8 h-8 grid place-content-center"
-                @click="handleDelete"
-              >
-                <Icon name="bx:trash" size="16" />
-              </UiBtn>
-            </div>
-          </template>
-        </UiDataTable>
-      </div>
-      <!-- ./ Reshape-able Content Table -->
+        <!-- Reshape-able Content Table -->
+        <div>
+          <p class="title pb-2">Reshape-able Content Table</p>
+          <UiDataTable :headers="headers" :items="items">
+            <template #status="item">
+              <span class="badge" :class="getStatusBadge(item.status)">{{
+                item?.status
+              }}</span>
+            </template>
+            <template #created_at="item">
+              <span>{{ formatDate(item?.created_at, "DD MMM, YYYY hh:mm A") }}</span>
+            </template>
+            <template #actions="item">
+              <div class="flex space-x-2">
+                <UiBtn class="btn-btn-primary !p-0 w-8 h-8 grid place-content-center">
+                  <Icon name="bx:edit" size="16" />
+                </UiBtn>
+                <UiBtn
+                  class="btn-btn-primary !p-0 w-8 h-8 grid place-content-center"
+                  @click="handleDelete"
+                >
+                  <Icon name="bx:trash" size="16" />
+                </UiBtn>
+              </div>
+            </template>
+          </UiDataTable>
+        </div>
+        <!-- ./ Reshape-able Content Table -->
 
-      <!-- Selectable Table -->
-      <div>
-        <p class="title pb-2">Selectable Table</p>
-        <UiDataTable
-          :headers="headers"
-          :items="items"
-          selectable
-          v-model:selected-items="selectedItems"
-        >
-          <template #actions="item">
-            <div class="flex space-x-2">
-              <UiBtn class="btn-btn-primary !p-0 w-8 h-8 grid place-content-center">
-                <Icon name="bx:edit" size="16" />
-              </UiBtn>
-              <UiBtn
-                class="btn-btn-primary !p-0 w-8 h-8 grid place-content-center"
-                @click="handleDelete"
-              >
-                <Icon name="bx:trash" size="16" />
-              </UiBtn>
-            </div>
-          </template>
-        </UiDataTable>
-      </div>
-      <!-- ./ Selectable Table -->
+        <!-- Selectable Table -->
+        <div>
+          <p class="title pb-2">Selectable Table</p>
+          <UiDataTable
+            :headers="headers"
+            :items="items"
+            selectable
+            v-model:selected-items="selectedItems"
+          >
+            <template #actions="item">
+              <div class="flex space-x-2">
+                <UiBtn class="btn-btn-primary !p-0 w-8 h-8 grid place-content-center">
+                  <Icon name="bx:edit" size="16" />
+                </UiBtn>
+                <UiBtn
+                  class="btn-btn-primary !p-0 w-8 h-8 grid place-content-center"
+                  @click="handleDelete"
+                >
+                  <Icon name="bx:trash" size="16" />
+                </UiBtn>
+              </div>
+            </template>
+          </UiDataTable>
+        </div>
+        <!-- ./ Selectable Table -->
 
-      <!-- Sticky Column Table -->
-      <div>
-        <p class="title pb-2">Sticky Column Table</p>
-        <UiDataTable
-          :headers="headers"
-          :items="items"
-          selectable
-          v-model:selected-items="selectedItems"
-          sticky-first-column
-        >
-          <template #actions="item">
-            <div class="flex space-x-2">
-              <UiBtn class="btn-btn-primary !p-0 w-8 h-8 grid place-content-center">
-                <Icon name="bx:edit" size="16" />
-              </UiBtn>
-              <UiBtn
-                class="btn-btn-primary !p-0 w-8 h-8 grid place-content-center"
-                @click="handleDelete"
-              >
-                <Icon name="bx:trash" size="16" />
-              </UiBtn>
-            </div>
-          </template>
-        </UiDataTable>
-      </div>
-      <!-- ./ Sticky Column Table -->
+        <!-- Sticky Column Table -->
+        <div>
+          <p class="title pb-2">Sticky Column Table</p>
+          <UiDataTable
+            :headers="headers"
+            :items="items"
+            selectable
+            v-model:selected-items="selectedItems"
+            sticky-first-column
+          >
+            <template #actions="item">
+              <div class="flex space-x-2">
+                <UiBtn class="btn-btn-primary !p-0 w-8 h-8 grid place-content-center">
+                  <Icon name="bx:edit" size="16" />
+                </UiBtn>
+                <UiBtn
+                  class="btn-btn-primary !p-0 w-8 h-8 grid place-content-center"
+                  @click="handleDelete"
+                >
+                  <Icon name="bx:trash" size="16" />
+                </UiBtn>
+              </div>
+            </template>
+          </UiDataTable>
+        </div>
+        <!-- ./ Sticky Column Table -->
 
-      <!-- Clickable Table -->
-      <div>
-        <p class="title pb-2">Clickable Table</p>
-        <UiDataTable
-          :headers="headers"
-          :items="items"
-          @row-click="handleRowClick"
-          row-classes="cursor-pointer"
-        >
-          <template #actions="item">
-            <div class="flex space-x-2">
-              <UiBtn class="btn-btn-primary !p-0 w-8 h-8 grid place-content-center">
-                <Icon name="bx:edit" size="16" />
-              </UiBtn>
-              <UiBtn
-                class="btn-btn-primary !p-0 w-8 h-8 grid place-content-center"
-                @click="handleDelete"
-              >
-                <Icon name="bx:trash" size="16" />
-              </UiBtn>
-            </div>
-          </template>
-        </UiDataTable>
+        <!-- Clickable Table -->
+        <div>
+          <p class="title pb-2">Clickable Table</p>
+          <UiDataTable
+            :headers="headers"
+            :items="items"
+            @row-click="handleRowClick"
+            row-classes="cursor-pointer"
+          >
+            <template #actions="item">
+              <div class="flex space-x-2">
+                <UiBtn class="btn-btn-primary !p-0 w-8 h-8 grid place-content-center">
+                  <Icon name="bx:edit" size="16" />
+                </UiBtn>
+                <UiBtn
+                  class="btn-btn-primary !p-0 w-8 h-8 grid place-content-center"
+                  @click="handleDelete"
+                >
+                  <Icon name="bx:trash" size="16" />
+                </UiBtn>
+              </div>
+            </template>
+          </UiDataTable>
+        </div>
+        <!-- ./ Clickable Table -->
       </div>
-      <!-- ./ Clickable Table -->
-    </div>
-  </div>
+    </div></DashboardWrapper
+  >
 </template>
 
 <style scoped></style>
