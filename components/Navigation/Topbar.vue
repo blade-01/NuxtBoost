@@ -18,11 +18,31 @@ useShortcut({
 
 <template>
   <div
-    class="flex items-center main sticky top-0 w-full h-[var(--sidebar-height)] z-30 shadow-sm bg-bg-primary dark:bg-bg-secondary"
+    class="flex items-center main fixed top-0 w-full h-[var(--sidebar-height)] z-50 shadow-sm border-b border-b-border-primary dark:border-b-border-secondary bg-bg-primary dark:bg-bg-secondary md:w-[calc(100%-var(--sidebar-width-md))] lg:w-[calc(100%-var(--sidebar-width-lg))] 2xl:w-[calc(100%-var(--sidebar-width-2xl))] transition-all ease-out duration-500"
+    :class="{
+      'md:!w-full': nav,
+    }"
   >
     <div class="p-4 w-full">
+      <div class="hidden md:block absolute top-4 -left-3.5 z-50">
+        <UiBtn
+          v-tooltip="{
+            value: `${nav ? 'collapse [' : 'expand ['}`,
+            pt: tooltipStyle,
+          }"
+          ref="sidebarToggler"
+          class="!p-2 !bg-sidebar-primary dark:!bg-sidebar-secondary border border-bg-secondary/[0.2] dark:border-bg-primary/[0.2] rounded-full !h-7 !w-7 !flex !justify-center !items-center"
+          @click="toggleSidebar"
+        >
+          <Icon
+            :name="nav ? 'mdi:chevron-right' : 'mdi:chevron-left'"
+            class="!flex"
+            size="26"
+          ></Icon>
+        </UiBtn>
+      </div>
       <div class="flex justify-between items-center w-full">
-        <div class="flex items-center gap-2">
+        <div class="flex items-center gap-2 md:hidden">
           <UiBtn
             v-tooltip="{
               value: `${!nav ? 'collapse [' : 'expand ['}`,
@@ -34,8 +54,11 @@ useShortcut({
           >
             <Icon name="mdi:menu" class="text-3xl font-bold cursor-pointer"></Icon>
           </UiBtn>
-          <p>Welcome, Blade!</p>
+          <p class="text-style text-2xl font-semibold">Welcome Blade!</p>
         </div>
+        <p class="text-style text-2xl font-semibold hidden md:flex pl-5">
+          Welcome Blade!
+        </p>
         <div class="flex items-center gap-4">
           <Icon
             :name="
@@ -45,8 +68,6 @@ useShortcut({
             class="cursor-pointer"
             @click="setTheme($colorMode.preference === 'dark' ? 'light' : 'dark')"
           />
-          <Icon name="mdi:magnify" size="20" class="cursor-pointer" />
-          <Icon name="mdi:bell-outline" size="20" class="cursor-pointer" />
           <div class="flex gap-2 items-center cursor-pointer">
             <img
               src="https://avatars.githubusercontent.com/u/47092407?v=4"
