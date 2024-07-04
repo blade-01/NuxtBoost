@@ -5,6 +5,7 @@
 .nitro
 .cache
 dist
+.nuxt
 
 # Node dependencies
 node_modules
@@ -30,3 +31,4 @@ logs
 .env
 .env.*
 !.env.example
+.nuxt/
