@@ -148,7 +148,9 @@ const options = ref({
 }
 
 :deep(ul.vti__dropdown-list > .vti__input.vti__search_box) {
-  @apply !border-solid !border !border-border-primary rounded-[4px] m-1 block mx-auto sticky top-1.5 z-10 !bg-input-primary dark:!bg-input-secondary;
+  @apply !border-solid !border !border-border-primary rounded-[4px] m-1 block mx-auto sticky top-1.5 z-10 !bg-input-primary 
+    /* DARK MODE */
+    dark:!bg-input-secondary;
 }
 
 :deep(.vti__dropdown-item.highlighted) {
