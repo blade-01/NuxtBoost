@@ -74,7 +74,9 @@
 
   /* TEXT */
   .text-style {
-    @apply text-text-primary dark:text-text-secondary;
+    @apply text-text-primary 
+    /* DARK MODE */
+    dark:text-text-secondary;
   }
 
   /* FORM STYLE */
@@ -218,7 +220,9 @@
   }
 
   .btn-primary {
-    @apply bg-bg-primary text-text-primary hover:bg-border-primary dark:hover:bg-slate-700 transition-all duration-300 border border-gray-300;
+    @apply bg-bg-primary text-text-primary hover:bg-border-primary transition-all duration-300 border border-gray-300
+    /* DARK MODE */
+    dark:hover:bg-slate-700;
   }
 
   /* SIZES */
@@ -338,36 +342,54 @@
     @apply input-style !p-0 ring-0;
   }
   .dropdown-text {
-    @apply text-text-primary dark:text-text-secondary;
+    @apply text-text-primary 
+    /* DARK MODE */
+    dark:text-text-secondary;
   }
   .dropdown-filter-input {
-    @apply h-[42px] px-4 bg-filter-primary dark:bg-filter-secondary dropdown-text border border-border-primary focus:border-border-primary focus:ring-0;
+    @apply h-[42px] px-4 bg-filter-primary dropdown-text border border-border-primary focus:border-border-primary focus:ring-0 
+    /* DARK MODE */
+    dark:bg-filter-secondary;
   }
   .dropdown-icon {
     @apply absolute top-1/2 -translate-y-1/2 xs;
   }
   .dropdown-item {
-    @apply px-4 py-2 bg-input-primary dark:!bg-input-secondary hover:bg-selected-hover !text-text-primary dark:!text-text-secondary dark:hover:!bg-selected-hoverSec dropdown-text;
+    @apply px-4 py-2 bg-input-primary hover:bg-selected-hover !text-text-primary dropdown-text
+    /* DARK MODE */
+    dark:!bg-input-secondary dark:!text-text-secondary dark:hover:!bg-selected-hoverSec;
   }
 
   .dropdown-item-selected {
-    @apply bg-selected-primary dark:!bg-selected-secondary dropdown-text;
+    @apply bg-selected-primary dropdown-text
+    /* DARK MODE */
+    dark:!bg-selected-secondary;
   }
 
   /* DROPDOWN - MULTISELECT */
   .dropdown-checkbox-container {
-    @apply bg-gray-300 dark:bg-gray-600 rounded-md;
+    @apply bg-gray-300 rounded-md
+    /* DARK MODE */
+    dark:bg-gray-600;
   }
   .dropdown-checkbox {
-    @apply bg-gray-300 dark:bg-gray-600;
+    @apply bg-gray-300 
+    /* DARK MODE */
+    dark:bg-gray-600;
   }
   .dropdown-token {
-    @apply bg-gray-300 dark:!bg-gray-600 px-2.5;
+    @apply bg-gray-300 px-2.5
+    /* DARK MODE */
+    dark:!bg-gray-600;
   }
   .dropdown-token-label {
-    @apply text-text-primary dark:text-text-secondary pr-1;
+    @apply text-text-primary pr-1
+    /* DARK MODE */
+    dark:text-text-secondary;
   }
   .dropdown-token-icon {
-    @apply text-text-primary dark:text-text-secondary;
+    @apply text-text-primary 
+    /* DARK MODE */
+    dark:text-text-secondary;
   }
 }
