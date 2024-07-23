@@ -109,15 +109,4 @@
     `app.{js,ts,vue}`,
     `node_modules/tailvue/dist/tailvue.es.js`,
   ],
-  // variants: {
-  //   backgroundColor: [
-  //     'dark',
-  //     'dark-hover',
-  //     'dark-group-hover',
-  //     'dark-even',
-  //     'dark-odd'
-  //   ],
-  //   borderColor: ['dark', 'dark-focus', 'dark-focus-within'],
-  //   textColor: ['dark', 'dark-hover', 'dark-active']
-  // }
 };

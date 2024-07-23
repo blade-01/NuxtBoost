@@ -87,19 +87,19 @@ defineProps<{ nav: boolean }>();
 
 <style scoped>
 .sidebar {
-  @apply shadow-sm z-40 fixed top-0 md:left-0 -left-full transition-[left] duration-[350ms] ease-out border-r border-r-border-primary dark:border-r-border-secondary
+  @apply shadow-sm z-40 fixed top-0 md:left-0 -left-full transition-[left] duration-[350ms] ease-out border-r border-r-border-primary 
   bg-sidebar-primary
   /* DARK MODE */
-  dark:bg-sidebar-secondary
+  dark:border-r-border-secondary dark:bg-sidebar-secondary
   /* WIDTH */
   w-[var(--sidebar-width)] md:w-[var(--sidebar-width-md)] lg:w-[var(--sidebar-width-lg)] 2xl:w-[var(--sidebar-width-2xl)];
 }
 
 .sidebar-header {
   @apply sticky top-0 w-full h-[var(--sidebar-height)] shadow-sm p-4 flex justify-between items-center
-  bg-sidebar-primary border-b border-b-border-primary dark:border-b-border-secondary
+  bg-sidebar-primary border-b border-b-border-primary 
   /* DARK MODE */
-  dark:bg-sidebar-secondary;
+  dark:border-b-border-secondary dark:bg-sidebar-secondary;
 }
 
 .sidebar-content {
@@ -113,11 +113,14 @@ defineProps<{ nav: boolean }>();
 .sidebar-item {
   @apply p-3 transition-all ease-in-out duration-300 cursor-pointer flex items-center gap-2
   hover:bg-link-primary 
-  dark:hover:bg-link-secondary
+  /* DARK MODE */
+dark:hover:bg-link-secondary
   hover:rounded-md;
 }
 .sidebar-active {
-  @apply bg-link-primary dark:bg-link-secondary rounded-md text-text-primary dark:text-text-secondary;
+  @apply bg-link-primary rounded-md text-text-primary 
+    /* DARK MODE */
+    dark:bg-link-secondary dark:text-text-secondary;
 }
 
 .sidebar--active-chevron {

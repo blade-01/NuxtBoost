@@ -88,8 +88,9 @@ export default defineNuxtConfig({
    * Environment variables
    */
   runtimeConfig: {
+    authSecret: process.env.AUTH_SECRET,
     public: {
-      baseURL: ""
+      baseURL: process.env.API_BASE_URL
     }
   },
   /**
@@ -108,7 +109,8 @@ export default defineNuxtConfig({
     "dayjs-nuxt",
     "vue3-carousel-nuxt",
     "@nuxt/devtools",
-    "@nuxtjs/color-mode"
+    "@nuxtjs/color-mode",
+    "@sidebase/nuxt-auth"
   ],
   /**
    * Pinia configuration

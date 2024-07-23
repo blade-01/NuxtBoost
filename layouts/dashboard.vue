@@ -14,6 +14,7 @@ provide("collapsible", {
 </script>
 
 <template>
+  <!-- This should be the auth if there's auth -->
   <div class="relative overflow-x-clip">
     <NavigationSidebar :nav="nav" />
     <main class="sidebar-wrapper" :class="{ 'mainbar-opened': nav }">
@@ -24,7 +25,9 @@ provide("collapsible", {
 
 <style scoped>
 .sidebar-wrapper {
-  @apply bg-bg-primary dark:bg-bg-secondary h-screen overflow-y-auto w-full transition-[margin-left] ease-out duration-500
+  @apply bg-bg-primary h-screen overflow-y-auto w-full transition-[margin-left] ease-out duration-500
+    /* DARK MODE */
+    dark:bg-bg-secondary 
   /* MARGIN */
   lg:ml-[var(--sidebar-width-lg)] 2xl:ml-[var(--sidebar-width-2xl)]
   /* WIDTH */
