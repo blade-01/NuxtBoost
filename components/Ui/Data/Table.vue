@@ -180,7 +180,9 @@ function handleScroll(event: Event) {
 
 <style scoped>
 .sticky-column-shadow {
-  @apply shadow-md border-r-bg-primary dark:border-r-bg-secondary;
+  @apply shadow-md border-r-bg-primary 
+    /* DARK MODE */
+    dark:border-r-bg-secondary;
 }
 .table-fixed-column table {
   border-collapse: separate;
