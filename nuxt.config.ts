@@ -161,5 +161,14 @@ export default defineNuxtConfig({
     cloudinary: {
       baseURL: "https://res.cloudinary.com/bladencove/image/upload/RC"
     }
+  },
+  /**
+   * nuxt-auth configuration
+   */
+  auth: {
+    baseURL: process.env.AUTH_ORIGIN,
+    provider: {
+      type: "authjs"
+    }
   }
 });
