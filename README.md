@@ -16,7 +16,7 @@ Inspired by <a href="https://github.com/blade-01/vueboost">Vue Boost</a>
 <br>
 
 <p align='center'>
-<a href="https://nuxt-boost.vercel.app/">Live Demo</a>
+<a href="https://nuxtboost.vercel.app/">Live Demo</a>
 </p>
 
 <br>
@@ -97,7 +97,7 @@ Inspired by <a href="https://github.com/blade-01/vueboost">Vue Boost</a>
     - [Side](/components/Ui/Modal/Side.vue) - Side modal component (left, right, top, bottom)
     - [Center](/components/Ui/Modal/Center.vue) - Center modal component
 - [Samples Folder](/pages/dashboard/)
-  - You can find out how to use these components by clicking [Dashboard Folder](/pages/dashboard/) or visit [NuxtBoost Dashboard](https://nuxt-boost.vercel.app) for the visualization
+  - You can find out how to use these components by clicking [Dashboard Folder](/pages/dashboard/) or visit [NuxtBoost Dashboard](https://nuxtboost.vercel.app) for the visualization
 
 ### Composables
 
